@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DeSpawnByDistance : DeSpawn
 {
-    [SerializeField] private float disLimit = 70f;
-    [SerializeField] private float distance = 0f;
-    [SerializeField] private Camera mainCam;
+    [SerializeField] protected float disLimit = 70f;
+    [SerializeField] protected float distance = 0f;
+    [SerializeField] protected Camera mainCam;
 
     protected override void LoadComponents()
     {

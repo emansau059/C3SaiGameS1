@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ThanhMonoBehaviour : MonoBehaviour
 {
-    protected virtual void Reset()
-    {
-        this.LoadComponents();
-    }
     protected virtual void Awake()
     {
         this.LoadComponents();
@@ -16,8 +12,22 @@ public class ThanhMonoBehaviour : MonoBehaviour
     {
         //for override
     }
+    protected virtual void Reset()
+    {
+        this.LoadComponents();
+        this.ResetValue();
+    }
     protected virtual void LoadComponents()
     {
         //For override
     }
+    protected virtual void ResetValue()
+    {
+        //For override
+    }
+    protected virtual void OnEnable()
+    {
+        //For override
+    }
+
 }
