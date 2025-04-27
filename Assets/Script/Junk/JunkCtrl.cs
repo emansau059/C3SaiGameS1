@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class JunkCtrl : ThanhMonoBehaviour
 {
-    [SerializeField] protected JunkSpawner _junkSpawner;
-    public JunkSpawner JunkSpawner => _junkSpawner;
-    [SerializeField] protected JunkSpawnPoints _spawnPoints;
-    public JunkSpawnPoints SpawnPoints => _spawnPoints;
+    [SerializeField] protected Transform _model;
+    public Transform model => _model;
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkSpawner();
-        this.LoadSpawnPoints();
+        this.LoadModel();
     }
-    protected virtual void LoadJunkSpawner()
+    protected virtual void LoadModel()
     {
-        if (this._junkSpawner != null) return;
-        this._junkSpawner = this.GetComponent<JunkSpawner>();
-        Debug.Log(transform.name + "Load JunkSpawner", gameObject);
+        if (this._model != null) return;
+        this._model = transform.Find("Model");
+        Debug.Log(transform.name + "Load Model", gameObject);
     }
-    protected virtual void LoadSpawnPoints()
-    {
-        if (this._spawnPoints != null) return;
-        this._spawnPoints = Transform.FindObjectOfType<JunkSpawnPoints>();
-        Debug.Log(transform.name + "Load SpawnPoints", gameObject);
-    }
+
 }
